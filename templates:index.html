@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvoConnect: ChatGPT Inquiry Hub</title>
+</head>
+<body>
+    <h1>ConvoConnect: ChatGPT Inquiry Hub</h1>
+    <form action="/get_response" method="post">
+        <label for="user_input">Ask a question:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Get Answer</button>
+    </form>
+    {% if user_input %}
+        <p>User: {{ user_input }}</p>
+    {% endif %}
+    {% if chatgpt_response %}
+        <p>ChatGPT: {{ chatgpt_response }}</p>
+    {% endif %}
+</body>
+</html>
